@@ -1,0 +1,47 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dharts</title>
+  <link rel="icon" type="image/x-icon" href="3.png">
+  <link rel="stylesheet" href="style.css" />
+  <!-- EmailJS SDK -->
+  <script type="module">
+    import emailjs from 'https://esm.sh/@emailjs/browser';
+    window.emailjs = emailjs;
+    emailjs.init("nbQOXPlyDm2MFLVoV");
+  </script>
+  <script src="script.js" defer></script>
+
+
+</head>
+
+<body>
+  <main class="container">
+    <header class="site-header">
+      <img src="1.png" alt="Art Social Logo" class="logo" />
+      <h1>DHART'S</h1>
+    </header>
+    <form id="uploadForm" style="display:none" enctype="multipart/form-data">
+      <input type="text" id="title" name="title" placeholder="Title" required />
+      <textarea id="description" name="description" placeholder="Description" required></textarea>
+      <input type="text" id="category" name="category" placeholder="Category" required />
+      <input type="file" id="imageFile" name="imageFile" accept="image/*" required />
+      <button type="submit">📤 Post Art</button>
+    </form>
+
+    <div id="categoryFilter" class="category-filter"></div>
+    <div id="categoriesContainer"></div>
+    <div id="imageModal" class="image-modal" style="display:none">
+      <span id="modalClose" class="modal-close">&times;</span>
+      <img id="modalImg" src="" alt="Full screen art" />
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
